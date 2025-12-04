@@ -524,7 +524,7 @@ const pickr = Pickr.create({
     });
 
 // Room
-let thisMaxRoomParticipants = 8;
+let thisMaxRoomParticipants = 30;
 
 // misc
 let swBg = 'rgba(0, 0, 0, 0.7)'; // swAlert background color
@@ -1331,7 +1331,7 @@ function handleServerInfo(config) {
     isPeerAuthEnabled = user_auth;
 
     // Get survey settings from server
-    surveyActive = survey.active;
+    surveyActive = false;
     surveyURL = survey.url;
 
     // Get redirect settings from server
@@ -4568,8 +4568,8 @@ function setPeerChatAvatarImgName(avatar, peerName, peerAvatar) {
         peerAvatar && isImageURL(peerAvatar)
             ? peerAvatar
             : isValidEmail(peerName)
-              ? genGravatar(peerName)
-              : genAvatarSvg(peerName, 32);
+                ? genGravatar(peerName)
+                : genAvatarSvg(peerName, 32);
 
     switch (avatar) {
         case 'left':
@@ -7578,7 +7578,7 @@ async function toggleScreenSharing(init = false) {
             if (extras) {
                 try {
                     peerInfo.extras = { ...(peerInfo.extras || {}), ...extras };
-                } catch (_) {}
+                } catch (_) { }
                 await emitPeerStatus('screen', true, extras);
             }
 
@@ -7650,7 +7650,7 @@ async function toggleScreenSharing(init = false) {
                 emitPeersAction('screenStop');
                 try {
                     peerInfo.extras = {};
-                } catch (_) {}
+                } catch (_) { }
                 await emitPeerStatus('screen', false, {});
                 await refreshMyStreamToPeers(undefined, true);
 
@@ -9081,8 +9081,8 @@ function handleSpeechTranscript(config) {
         peer_avatar && isImageURL(peer_avatar)
             ? peer_avatar
             : isValidEmail(peer_name)
-              ? genGravatar(peer_name)
-              : genAvatarSvg(peer_name, 32);
+                ? genGravatar(peer_name)
+                : genAvatarSvg(peer_name, 32);
 
     if (!isCaptionBoxVisible) showCaptionDraggable();
 
@@ -9417,8 +9417,8 @@ async function msgerAddPeers(peers) {
                     peer_avatar && isImageURL(peer_avatar)
                         ? peer_avatar
                         : isValidEmail(peer_name)
-                          ? genGravatar(peer_name)
-                          : genAvatarSvg(peer_name, 24);
+                            ? genGravatar(peer_name)
+                            : genAvatarSvg(peer_name, 24);
 
                 // Dropdown menu options based on isPresenter
                 let dropdownOptions = '';
@@ -9725,7 +9725,7 @@ function sanitizeHtml(input) {
 function isHtml(str) {
     let a = document.createElement('div');
     a.innerHTML = str;
-    for (let c = a.childNodes, i = c.length; i--; ) {
+    for (let c = a.childNodes, i = c.length; i--;) {
         if (c[i].nodeType == 1) return true;
     }
     return false;
@@ -10108,8 +10108,8 @@ function handlePeerName(config) {
             peer_avatar && isImageURL(peer_avatar)
                 ? peer_avatar
                 : isValidEmail(peer_name)
-                  ? genGravatar(peer_name)
-                  : genAvatarSvg(peer_name, 32);
+                    ? genGravatar(peer_name)
+                    : genAvatarSvg(peer_name, 32);
     }
 
     // refresh also peer video avatar name
@@ -13082,10 +13082,9 @@ function showAbout() {
         html: `
             <br/>
             <div id="about">
-                ${
-                    brand.about?.html && brand.about.html.trim() !== ''
-                        ? brand.about.html
-                        : `
+                ${brand.about?.html && brand.about.html.trim() !== ''
+                ? brand.about.html
+                : `
                         <button 
                             id="support-button" 
                             data-umami-event="Support button" 
@@ -13114,7 +13113,7 @@ function showAbout() {
                         <span>&copy; 2025 MiroTalk P2P, all rights reserved</span>
                         <hr />
                         `
-                }
+            }
             </div>
         `,
         showClass: { popup: 'animate__animated animate__fadeInDown' },
