@@ -3661,7 +3661,7 @@ async function loadLocalMedia(stream, kind) {
             myScreenAvatarImage.className = 'videoAvatarImage'; // pulsate
 
             // my screen nav bar
-            myScreenNavBar.className = 'navbar fadein';
+            myScreenNavBar.className = 'hide-this';
 
             // attach to screen nav bar
             !isMobileDevice && myScreenNavBar.appendChild(myScreenPinBtn);
@@ -3962,7 +3962,7 @@ async function loadRemoteMediaStream(stream, peers, peer_id, kind) {
             remotePitchMeter.appendChild(remotePitchBar);
 
             // remote video nav bar
-            remoteVideoNavBar.className = 'navbar fadein';
+            remoteVideoNavBar.className = 'hide-this';
 
             // remote expand buttons div
             remoteExpandBtnDiv.className = 'expand-video';
@@ -4205,7 +4205,7 @@ async function loadRemoteMediaStream(stream, peers, peer_id, kind) {
             remoteScreenAvatarImage.setAttribute('id', peer_id + '_screen_avatar');
             remoteScreenAvatarImage.className = 'videoAvatarImage';
 
-            remoteScreenNavBar.className = 'navbar fadein';
+            remoteScreenNavBar.className = 'hide-this';
             !isMobileDevice && remoteScreenNavBar.appendChild(remoteScreenPinBtn);
 
             buttons.remote.showVideoFocusBtn && remoteScreenNavBar.appendChild(remoteScreenFocusBtn);
