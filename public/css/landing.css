@@ -1076,6 +1076,7 @@ fieldset {
     border-width: 1px;
     border-style: solid;
     border-color: #16171b;
+    width: 100%;
 }
 
 .form-input:hover,
