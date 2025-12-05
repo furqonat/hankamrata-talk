@@ -153,26 +153,26 @@ let speed = 100;
 /**
  * Set room name with typewriter effect
  */
-function typeWriter() {
-    if (i < txt.length) {
-        roomName.value += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    }
-}
+// function typeWriter() {
+//     if (i < txt.length) {
+//         roomName.value += txt.charAt(i);
+//         i++;
+//         setTimeout(typeWriter, speed);
+//     }
+// }
 
 const roomName = document.getElementById('roomName');
-if (roomName) {
-    roomName.value = '';
-    typeWriter();
+// if (roomName) {
+//     roomName.value = '';
+//     typeWriter();
 
-    roomName.onkeyup = (e) => {
-        if (e.keyCode === 13) {
-            e.preventDefault();
-            joinRoom();
-        }
-    };
-}
+//     roomName.onkeyup = (e) => {
+//         if (e.keyCode === 13) {
+//             e.preventDefault();
+//             joinRoom();
+//         }
+//     };
+// }
 
 // ####################################################################
 // LANDING | NEW CALL

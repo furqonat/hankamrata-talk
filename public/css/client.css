@@ -7,7 +7,7 @@
 :root {
     /* common */
     --navbar-bg: rgba(0, 0, 0, 0.2);
-    --body-bg: radial-gradient(#393939, #000000);
+    --body-bg: #000000;
     --border: 0.5px solid rgb(255 255 255 / 32%);
     --dd-color: #ffffff;
 
@@ -112,7 +112,6 @@ body {
     height: 100%;
     margin: auto;
     overflow: hidden;
-    background: var(--body-bg);
     /* background: url('../images/bg.svg'); */
 }
 

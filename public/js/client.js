@@ -170,7 +170,7 @@ const initVideoContainer = getQs('.init-video-container');
 const initVideo = getId('initVideo');
 const initVideoBtn = getId('initVideoBtn');
 const initAudioBtn = getId('initAudioBtn');
-const initScreenShareBtn = getId('initScreenShareBtn');
+// const initScreenShareBtn = getId('initScreenShareBtn');
 const initVideoMirrorBtn = getId('initVideoMirrorBtn');
 const initUsernameEmojiButton = getId('initUsernameEmojiButton');
 const initVideoSelect = getId('initVideoSelect');
@@ -202,7 +202,7 @@ const audioBtn = getId('audioBtn');
 const videoBtn = getId('videoBtn');
 const swapCameraBtn = getId('swapCameraBtn');
 const hideMeBtn = getId('hideMeBtn');
-const screenShareBtn = getId('screenShareBtn');
+// const screenShareBtn = getId('screenShareBtn');
 const myHandBtn = getId('myHandBtn');
 const leaveRoomBtn = getId('leaveRoomBtn');
 
@@ -753,7 +753,7 @@ function setButtonsToolTip() {
     // Not need for mobile
     if (isMobileDevice) return;
     // Init buttons
-    setTippy(initScreenShareBtn, 'Toggle screen sharing', 'top');
+    // setTippy(initScreenShareBtn, 'Toggle screen sharing', 'top');
     setTippy(initVideoMirrorBtn, 'Toggle video mirror', 'top');
     setTippy(initUsernameEmojiButton, 'Toggle username emoji', 'top');
     // Main buttons
@@ -859,7 +859,7 @@ function refreshMainButtonsToolTipPlacement() {
     // BottomButtons
     bottomButtonsPlacement = btnsBarSelect.options[btnsBarSelect.selectedIndex].value == 'vertical' ? 'top' : 'right';
 
-    setTippy(shareRoomBtn, 'Share the Room', placement);
+    // setTippy(shareRoomBtn, 'Share the Room', placement);
     setTippy(hideMeBtn, 'Toggle hide myself from the room view', placement);
     setTippy(recordStreamBtn, 'Start recording', placement);
     setTippy(fullScreenBtn, 'View full screen', placement);
@@ -874,7 +874,7 @@ function refreshMainButtonsToolTipPlacement() {
     setTippy(toggleExtraBtn, 'Toggle extra buttons', bottomButtonsPlacement);
     setTippy(audioBtn, useAudio ? 'Stop the audio' : 'My audio is disabled', bottomButtonsPlacement);
     setTippy(videoBtn, useVideo ? 'Stop the video' : 'My video is disabled', bottomButtonsPlacement);
-    setTippy(screenShareBtn, 'Start screen sharing', bottomButtonsPlacement);
+    // setTippy(screenShareBtn, 'Start screen sharing', bottomButtonsPlacement);
     setTippy(myHandBtn, 'Raise your hand', bottomButtonsPlacement);
     setTippy(chatRoomBtn, 'Open the chat', bottomButtonsPlacement);
     setTippy(participantsBtn, 'Show participants', bottomButtonsPlacement);
@@ -1356,7 +1356,7 @@ function handleServerInfo(config) {
     }
 
     if (notify && peers_count == 1) {
-        shareRoomMeetingURL(true);
+        // shareRoomMeetingURL(true);
     } else {
         checkShareScreen();
     }
@@ -1654,7 +1654,7 @@ async function whoAreYou() {
         ]);
     }
     if (!buttons.main.showScreenBtn) {
-        elemDisplay(getId('initScreenShareBtn'), false);
+        // elemDisplay(getId('initScreenShareBtn'), false);
     }
 
     initVideoContainerShow(myVideoStatus);
@@ -2207,7 +2207,7 @@ async function joinToChannel() {
         userAgent: userAgent,
     });
     handleBodyOnMouseMove(); // show/hide buttonsBar, bottomButtons ...
-    makeRoomPopupQR();
+    // makeRoomPopupQR();
 }
 
 /**
@@ -3488,7 +3488,7 @@ async function loadLocalMedia(stream, kind) {
             myPitchBar.style.height = '1%';
 
             // my video nav bar
-            myVideoNavBar.className = 'navbar fadein';
+            myVideoNavBar.className = 'hide-this';
 
             !isMobileDevice && myVideoNavBar.appendChild(myVideoPinBtn);
 
@@ -5378,17 +5378,17 @@ function setScreenShareBtn() {
         (navigator.getDisplayMedia || navigator.mediaDevices.getDisplayMedia) &&
         buttons.main.showScreenBtn
     ) {
-        isScreenSharingSupported = true;
-        initScreenShareBtn.addEventListener('click', async (e) => {
-            await toggleScreenSharing(true);
-        });
-        screenShareBtn.addEventListener('click', async (e) => {
-            await toggleScreenSharing();
-        });
+        isScreenSharingSupported = false;
+        // initScreenShareBtn.addEventListener('click', async (e) => {
+        //     await toggleScreenSharing(true);
+        // });
+        // screenShareBtn.addEventListener('click', async (e) => {
+        //     await toggleScreenSharing();
+        // });
     } else {
         displayElements([
-            { element: initScreenShareBtn, display: false },
-            { element: screenShareBtn, display: false },
+            // { element: initScreenShareBtn, display: false },
+            // { element: screenShareBtn, display: false },
             { element: screenFpsDiv, display: false },
         ]);
     }
@@ -6628,13 +6628,13 @@ function handleShortcuts() {
                     }
                     videoBtn.click();
                     break;
-                case 's':
-                    if (notPresenter && !buttons.main.showScreenBtn) {
-                        toastMessage('warning', 'The presenter has disabled your ability to share the screen');
-                        break;
-                    }
-                    screenShareBtn.click();
-                    break;
+                // case 's':
+                //     if (notPresenter && !buttons.main.showScreenBtn) {
+                //         toastMessage('warning', 'The presenter has disabled your ability to share the screen');
+                //         break;
+                //     }
+                //     screenShareBtn.click();
+                //     break;
                 case 'h':
                     if (notPresenter && !buttons.main.showMyHandBtn) {
                         toastMessage('warning', 'The presenter has disabled your ability to raise your hand');
@@ -7204,10 +7204,10 @@ async function shareRoomUrl() {
             */
             console.error('Navigator share error', err);
 
-            shareRoomMeetingURL();
+            // shareRoomMeetingURL();
         }
     } else {
-        shareRoomMeetingURL();
+        // shareRoomMeetingURL();
     }
 }
 
@@ -7215,41 +7215,41 @@ async function shareRoomUrl() {
  * Share meeting room
  * @param {boolean} checkScreen check screen share
  */
-function shareRoomMeetingURL(checkScreen = false) {
-    playSound('newMessage');
-    const roomURL = getRoomURL();
-    Swal.fire({
-        background: swBg,
-        position: 'center',
-        title: 'Share the room',
-        html: `
-        <div id="qrRoomContainer">
-            <canvas id="qrRoom"></canvas>
-        </div>
-        <br/>
-        <p style="color:rgb(8, 189, 89);">Join from your mobile device</p>
-        <p style="background:transparent; color:white; font-family: Arial, Helvetica, sans-serif;">No need for apps, simply capture the QR code with your mobile camera Or Invite someone else to join by sending them the following URL</p>
-        <p style="color:rgb(8, 189, 89);">${roomURL}</p>`,
-        showDenyButton: true,
-        showCancelButton: true,
-        cancelButtonColor: 'red',
-        denyButtonColor: 'green',
-        confirmButtonText: `Copy URL`,
-        denyButtonText: `Email invite`,
-        cancelButtonText: `Close`,
-        showClass: { popup: 'animate__animated animate__fadeInDown' },
-        hideClass: { popup: 'animate__animated animate__fadeOutUp' },
-    }).then((result) => {
-        if (result.isConfirmed) {
-            copyRoomURL();
-        } else if (result.isDenied) {
-            shareRoomByEmail();
-        }
-        // share screen on join room
-        if (checkScreen) checkShareScreen();
-    });
-    makeRoomQR();
-}
+// function shareRoomMeetingURL(checkScreen = false) {
+//     playSound('newMessage');
+//     const roomURL = getRoomURL();
+//     Swal.fire({
+//         background: swBg,
+//         position: 'center',
+//         title: 'Share the room',
+//         html: `
+//         <div id="qrRoomContainer">
+//             <canvas id="qrRoom"></canvas>
+//         </div>
+//         <br/>
+//         <p style="color:rgb(8, 189, 89);">Join from your mobile device</p>
+//         <p style="background:transparent; color:white; font-family: Arial, Helvetica, sans-serif;">No need for apps, simply capture the QR code with your mobile camera Or Invite someone else to join by sending them the following URL</p>
+//         <p style="color:rgb(8, 189, 89);">${roomURL}</p>`,
+//         showDenyButton: true,
+//         showCancelButton: true,
+//         cancelButtonColor: 'red',
+//         denyButtonColor: 'green',
+//         confirmButtonText: `Copy URL`,
+//         denyButtonText: `Email invite`,
+//         cancelButtonText: `Close`,
+//         showClass: { popup: 'animate__animated animate__fadeInDown' },
+//         hideClass: { popup: 'animate__animated animate__fadeOutUp' },
+//     }).then((result) => {
+//         if (result.isConfirmed) {
+//             copyRoomURL();
+//         } else if (result.isDenied) {
+//             shareRoomByEmail();
+//         }
+//         // share screen on join room
+//         if (checkScreen) checkShareScreen();
+//     });
+//     makeRoomQR();
+// }
 
 /**
  * Make Room QR
@@ -7773,10 +7773,10 @@ async function handleToggleScreenException(reason, init) {
  */
 function setScreenSharingStatus(status) {
     setMediaButtonsClass([
-        { element: initScreenShareBtn, status, mediaType: 'screen' },
-        { element: screenShareBtn, status, mediaType: 'screen' },
+        // { element: initScreenShareBtn, status, mediaType: 'screen' },
+        // { element: screenShareBtn, status, mediaType: 'screen' },
     ]);
-    setTippy(screenShareBtn, status ? 'Stop screen sharing' : 'Start screen sharing', placement);
+    // setTippy(screenShareBtn, status ? 'Stop screen sharing' : 'Start screen sharing', placement);
 }
 
 /**
