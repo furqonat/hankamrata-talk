@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * MiroTalk Widget Factory - Main class for creating and managing widgets
+ * HankamrataTalk Widget Factory - Main class for creating and managing widgets
  */
 class MiroTalkWidget {
     static DEFAULT_OPTIONS = {
@@ -29,11 +29,11 @@ class MiroTalkWidget {
             customMessages: {
                 heading: 'Need a hand?',
                 subheading:
-                    'Hop on a <span style="font-weight: bold">Free 1:1 or Group Consultation</span> with a MiroTalk Expert right now!',
+                    'Hop on a <span style="font-weight: bold">Free 1:1 or Group Consultation</span> with a HankamrataTalk Expert right now!',
                 connectText: 'connect in < 10 seconds',
                 onlineText: 'We are online',
                 offlineText: 'We are offline',
-                poweredBy: 'Powered by <span class="mirotalk-powered-by">MiroTalk</span>',
+                poweredBy: 'Powered by <span class="mirotalk-powered-by">HankamrataTalk</span>',
             },
         },
     };
@@ -200,7 +200,7 @@ class MiroTalkWidget {
             element.style.willChange = '';
             try {
                 element.releasePointerCapture(e.pointerId);
-            } catch (err) {}
+            } catch (err) { }
         }
 
         function scheduleMove(left, top) {
@@ -299,12 +299,12 @@ class MiroTalkWidget {
             <p class="subheading">${customMessages.subheading}</p>
             <div class="expert-images">
                 ${expertImages
-                    .map(
-                        (img, i) => `
+                .map(
+                    (img, i) => `
                     <img src="${img}" class="expert-img" alt="Expert consultant ${i + 1}" loading="lazy" />
                 `
-                    )
-                    .join('')}
+                )
+                .join('')}
             </div>
             <div class="connect-text">${customMessages.connectText}</div>
             ${this.createActionButtons()}
@@ -833,10 +833,10 @@ document.addEventListener('DOMContentLoaded', function () {
             checkOnline: autoInit.getAttribute('data-check-online') === 'true',
             expertImages: autoInit.getAttribute('data-expert-images')
                 ? autoInit
-                      .getAttribute('data-expert-images')
-                      .split(',')
-                      .map((url) => url.trim())
-                      .filter(Boolean)
+                    .getAttribute('data-expert-images')
+                    .split(',')
+                    .map((url) => url.trim())
+                    .filter(Boolean)
                 : MiroTalkWidget.DEFAULT_OPTIONS.supportWidget.expertImages,
             customMessages: {
                 heading:
@@ -876,6 +876,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     } catch (error) {
-        console.error('Failed to auto-initialize MiroTalk Widget:', error);
+        console.error('Failed to auto-initialize HankamrataTalk Widget:', error);
     }
 });
