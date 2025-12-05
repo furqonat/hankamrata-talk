@@ -20,8 +20,8 @@ module.exports = {
             title: '<h1>Hankamrata Meet</h1>Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
             description:
                 'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
-            joinDescription: 'Pick a room name.<br />How about this one?',
-            joinButtonLabel: 'JOIN ROOM',
+            joinDescription: 'Pilih Ruangan.',
+            joinButtonLabel: 'MASUK RUANGAN',
             joinLastLabel: 'Your recent room:',
         },
         og: {
