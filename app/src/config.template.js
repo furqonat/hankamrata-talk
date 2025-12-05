@@ -2,11 +2,11 @@
 
 /**
  * ==============================================
- * HankamrataTalk P2P v.1.6.67 - Configuration File
+ * Hankamrata Meet P2P v.1.6.67 - Configuration File
  * ==============================================
  *
  * Branding and customizations require a license:
- * https://codecanyon.net/item/HankamrataTalk-p2p-webrtc-realtime-video-conferences/38376661
+ * https://codecanyon.net/item/Hankamrata Meet-p2p-webrtc-realtime-video-conferences/38376661
  */
 
 const packageJson = require('../../package.json');
@@ -16,8 +16,8 @@ module.exports = {
         htmlInjection: true,
         app: {
             language: 'en', // https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes
-            name: 'HankamrataTalk',
-            title: '<h1>HankamrataTalk</h1>Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
+            name: 'Hankamrata Meet',
+            title: '<h1>Hankamrata Meet</h1>Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
             description:
                 'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
             joinDescription: 'Pick a room name.<br />How about this one?',
@@ -26,26 +26,26 @@ module.exports = {
         },
         og: {
             type: 'app-webrtc',
-            siteName: 'HankamrataTalk',
+            siteName: 'Hankamrata Meet',
             title: 'Click the link to make a call.',
             description:
-                'HankamrataTalk calling provides real-time HD quality and latency simply not available with traditional technology.',
-            image: 'https://p2p.HankamrataTalk.com/images/preview.png',
-            url: 'https://p2p.HankamrataTalk.com',
+                'Hankamrata Meet calling provides real-time HD quality and latency simply not available with traditional technology.',
+            image: 'https://p2p.Hankamrata Meet.com/images/preview.png',
+            url: 'https://p2p.Hankamrata Meet.com',
         },
         site: {
             shortcutIcon: '../images/logo.svg',
             appleTouchIcon: '../images/logo.svg',
-            landingTitle: 'HankamrataTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-            newCallTitle: 'HankamrataTalk a Free Secure Video Calls, Chat & Screen Sharing.',
+            landingTitle: 'Hankamrata Meet',
+            newCallTitle: 'Hankamrata Meet',
             newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
             newCallRoomDescription:
                 "Each room has its disposable URL. Just pick a room name and share your custom URL. It's that easy.",
-            loginTitle: 'HankamrataTalk - Host Protected login required.',
-            clientTitle: 'HankamrataTalk WebRTC Video call, Chat Room & Screen Sharing.',
-            privacyPolicyTitle: 'HankamrataTalk - privacy and policy.',
+            loginTitle: 'Hankamrata Meet - Host Protected login required.',
+            clientTitle: 'Hankamrata Meet WebRTC Video call, Chat Room & Screen Sharing.',
+            privacyPolicyTitle: 'Hankamrata Meet - privacy and policy.',
             stunTurnTitle: 'Test Stun/Turn Servers.',
-            notFoundTitle: 'HankamrataTalk - 404 Page not found.',
+            notFoundTitle: 'Hankamrata Meet - 404 Page not found.',
         },
         html: {
             topSponsors: true,
@@ -60,7 +60,7 @@ module.exports = {
             footer: true,
         },
         about: {
-            imageUrl: '../images/HankamrataTalk-logo.gif',
+            imageUrl: '../images/Hankamrata Meet-logo.gif',
             title: `WebRTC P2P v${packageJson.version}`,
             html: `
                 <button 
@@ -80,16 +80,16 @@ module.exports = {
                 Email:<a 
                     id="email-button" 
                     data-umami-event="Email button" 
-                    href="mailto:miroslav.pejic.85@gmail.com?subject=HankamrataTalk P2P info"> 
+                    href="mailto:miroslav.pejic.85@gmail.com?subject=Hankamrata Meet P2P info"> 
                     miroslav.pejic.85@gmail.com
                 </a>
                 <br /><br />
                 <hr />
-                <span>&copy; 2025 HankamrataTalk P2P, all rights reserved</span>
+                <span>&copy; 2025 Hankamrata Meet P2P, all rights reserved</span>
                 <hr />
             `,
         },
-        // https://docs.HankamrataTalk.com/HankamrataTalk-p2p/integration/#widgets-integration
+        // https://docs.Hankamrata Meet.com/Hankamrata Meet-p2p/integration/#widgets-integration
         widget: {
             enabled: false,
             roomId: 'support-room',
@@ -116,14 +116,14 @@ module.exports = {
                     connectText: 'connect in < 5 seconds',
                     onlineText: 'We are online',
                     offlineText: 'We are offline',
-                    poweredBy: 'Powered by HankamrataTalk',
+                    poweredBy: 'Powered by Hankamrata Meet',
                 },
             },
         },
         //...
     },
     /**
-     * Configuration for controlling the visibility of buttons in the HankamrataTalk P2P client.
+     * Configuration for controlling the visibility of buttons in the Hankamrata Meet P2P client.
      * Set properties to true to show the corresponding buttons, or false to hide them.
      * captionBtn, showSwapCameraBtn, showScreenShareBtn, showFullScreenBtn, showVideoPipBtn, showDocumentPipBtn -> (auto-detected).
      */

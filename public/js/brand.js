@@ -41,8 +41,8 @@ const footer = document.getElementById('footer');
 let brand = {
     app: {
         language: 'en',
-        name: 'HankamrataTalk',
-        title: 'HankamrataTalk<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
+        name: 'Hankamrata Meet',
+        title: 'Hankamrata Meet<br />Free browser based Real-time video calls.<br />Simple, Secure, Fast.',
         description:
             'Start your next video call with a single click. No download, plug-in, or login is required. Just get straight to talking, messaging, and sharing your screen.',
         joinDescription: 'Pick a room name.<br />How about this one?',
@@ -52,16 +52,16 @@ let brand = {
     site: {
         shortcutIcon: '../images/logo.svg',
         appleTouchIcon: '../images/logo.svg',
-        landingTitle: 'HankamrataTalk a Free Secure Video Calls, Chat & Screen Sharing.',
-        newCallTitle: 'HankamrataTalk a Free Secure Video Calls, Chat & Screen Sharing.',
+        landingTitle: 'Hankamrata Meet',
+        newCallTitle: 'Hankamrata Meet',
         newCallRoomTitle: 'Pick name. <br />Share URL. <br />Start conference.',
         newCallRoomDescription:
             "Each room has its disposable URL. Just pick a room name and share your custom URL. It's that easy.",
-        loginTitle: 'HankamrataTalk - Host Protected login required.',
-        clientTitle: 'HankamrataTalk WebRTC Video call, Chat Room & Screen Sharing.',
-        privacyPolicyTitle: 'HankamrataTalk - privacy and policy.',
+        loginTitle: 'Hankamrata Meet - Host Protected login required.',
+        clientTitle: 'Hankamrata Meet WebRTC Video call, Chat Room & Screen Sharing.',
+        privacyPolicyTitle: 'Hankamrata Meet - privacy and policy.',
         stunTurnTitle: 'Test Stun/Turn Servers.',
-        notFoundTitle: 'HankamrataTalk - 404 Page not found.',
+        notFoundTitle: 'Hankamrata Meet - 404 Page not found.',
     },
     html: {
         topSponsors: true,
@@ -76,7 +76,7 @@ let brand = {
         footer: true,
     },
     about: {
-        imageUrl: '../images/HankamrataTalk-logo.gif',
+        imageUrl: '../images/Hankamrata Meet-logo.gif',
         title: 'WebRTC P2P v1.6.67',
         html: `
             <button 
@@ -96,12 +96,12 @@ let brand = {
             Email:<a 
                 id="email-button" 
                 data-umami-event="Email button" 
-                href="mailto:miroslav.pejic.85@gmail.com?subject=HankamrataTalk P2P info"> 
+                href="mailto:miroslav.pejic.85@gmail.com?subject=Hankamrata Meet P2P info"> 
                 miroslav.pejic.85@gmail.com
             </a>
             <br /><br />
             <hr />
-            <span>&copy; 2025 HankamrataTalk P2P, all rights reserved</span>
+            <span>&copy; 2025 Hankamrata Meet P2P, all rights reserved</span>
             <hr />
         `,
     },
@@ -131,7 +131,7 @@ let brand = {
                 connectText: 'connect in < 5 seconds',
                 onlineText: 'We are online',
                 offlineText: 'We are offline',
-                poweredBy: 'Powered by HankamrataTalk',
+                poweredBy: 'Powered by Hankamrata Meet',
             },
         },
     },
